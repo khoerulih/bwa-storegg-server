@@ -21,6 +21,8 @@ module.exports = {
       req.res.render('admin/voucher/view_voucher', {
         voucher,
         alert,
+        name: req.session.user.name,
+        title: 'Halaman Voucher',
       });
     } catch (err) {
       req.flash('alertMessage', `${err.message}`);
@@ -35,6 +37,8 @@ module.exports = {
       res.render('admin/voucher/create', {
         category,
         nominal,
+        name: req.session.user.name,
+        title: 'Halaman Tambah Voucher',
       });
     } catch (err) {
       req.flash('alertMessage', `${err.message}`);
@@ -112,6 +116,8 @@ module.exports = {
         voucher,
         category,
         nominals,
+        name: req.session.user.name,
+        title: 'Halaman Edit Voucher',
       });
     } catch (err) {
       req.flash('alertMessage', `${err.message}`);
